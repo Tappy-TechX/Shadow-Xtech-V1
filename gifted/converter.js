@@ -1,4 +1,4 @@
-const { gmd, gmdSticker, gmdRandom, runFFmpeg, getVideoDuration } = require("../gift");
+const { gmd, toAudio, toVideo, toPtt, stickerToImage, gmdFancy, gmdRandom, getSetting, runFFmpeg, getVideoDuration, gmdSticker } = require("../gift");
 const fs = require("fs").promises;
 const { StickerTypes } = require("wa-sticker-formatter");
 
@@ -57,8 +57,8 @@ gmd({
                 }
 
                 const stickerBuffer = await gmdSticker(mediaFile, {
-                    pack: packName || "𝐀𝐓𝐀𝐒𝐒𝐀-𝐌𝐃",
-                    author: packAuthor || "GIFTED-TECH",
+                    pack: packName || "Shadow-Xtech-V1",
+                    author: packAuthor || "Tappy-TechX",
                     type: args.includes("--crop") || args.includes("-c") ? StickerTypes.CROPPED : StickerTypes.FULL,
                     categories: ["🤩","🎉"],
                     id: "12345",
@@ -82,8 +82,8 @@ gmd({
                 await fs.writeFile(stickerFile, stickerData);
 
                 const newStickerBuffer = await gmdSticker(stickerFile, {
-                    pack: packName || "𝐀𝐓𝐀𝐒𝐒𝐀-𝐌𝐃",
-                    author: packAuthor || "GIFTED-TECH",
+                    pack: packName || "Shadow-Xtech-V1",
+                    author: packAuthor || "Tappy-TechX",
                     type: args.includes("--crop") || args.includes("-c") ? StickerTypes.CROPPED : StickerTypes.FULL,
                     categories: ["🤩","🎉"],
                     id: "12345",
