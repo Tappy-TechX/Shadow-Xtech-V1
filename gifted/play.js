@@ -222,7 +222,7 @@ gmd(
           document: convertedBuffer,
           mimetype: "audio/mpeg",
           fileName: `${firstVideo.title}.mp3`.replace(/[^\w\s.-]/gi, ""),
-          caption: `🏷️ *Title:* ${firstVideo.title}\n⏳ *Duration:* ${firstVideo.timestamp}\n\n_File too large for audio streaming — sent as document_`,
+          caption: `⿻ *Title:* ${firstVideo.title}\n⿻ *Duration:* ${firstVideo.timestamp}\n\n_File too large for audio streaming — sent as document_`,
         });
         return;
       }
@@ -231,8 +231,8 @@ gmd(
       const buttonId = `play_${firstVideo.id}_${dateNow}`;
       
       await sendButtons(Gifted, from, {
-        title: `🎧 Shadow-Xtech Song Downloader 🎧`,
-        text: `🏷️ *Title:* ${firstVideo.title}\n⏳ *Duration:* ${firstVideo.timestamp}\n\n*Select download format:*`,
+        title: `${botName} 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐑`,
+        text: `⿻ *Title:* ${firstVideo.title}\n⿻ *Duration:* ${firstVideo.timestamp}\n\n*Select download format:*`,
         footer: botFooter,
         image: { url: firstVideo.thumbnail || botPic },
         buttons: [
